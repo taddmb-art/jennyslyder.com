@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jenny Slyder - live acoustic music for Arizona venues, private events, restaurants, and community gatherings." />
+  <title>Jenny Slyder | Live Acoustic Music</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0d0b;
+      --bg2: #1b1510;
+      --card: rgba(255,255,255,0.07);
+      --card2: rgba(255,255,255,0.1);
+      --text: #fff7ed;
+      --muted: #d8cabb;
+      --accent: #d8a64b;
+      --accent2: #f2cf8a;
+      --line: rgba(255,255,255,0.14);
+      --shadow: rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 5%, rgba(216,166,75,0.22), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(128,70,30,0.30), transparent 26%),
+        linear-gradient(180deg, var(--bg2), var(--bg) 42%, #070605);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(10,8,6,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 15px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      color: var(--accent2);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: var(--accent2); }
+
+    .hero {
+      min-height: 84vh;
+      display: grid;
+      place-items: center;
+      padding: 80px 22px 70px;
+      text-align: center;
+    }
+    .hero-content { max-width: 920px; }
+    .eyebrow {
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; line-height: 1.05; }
+    h1 {
+      margin: 0;
+      font-size: clamp(3.6rem, 10vw, 8rem);
+      text-shadow: 0 20px 80px var(--shadow);
+    }
+    .subtitle {
+      max-width: 760px;
+      margin: 24px auto 34px;
+      font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+      color: var(--muted);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(216,166,75,0.85);
+      color: var(--text);
+      font-weight: 700;
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(0,0,0,0.28); }
+    .btn.primary { background: var(--accent); color: #17100a; }
+
+    section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 72px 22px;
+    }
+    .section-title {
+      font-size: clamp(2.1rem, 4.5vw, 3.6rem);
+      margin: 0 0 18px;
+    }
+    .lead { color: var(--muted); font-size: 1.08rem; max-width: 780px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 22px 70px rgba(0,0,0,0.22);
+    }
+    .card h3 { margin-top: 0; font-size: 1.6rem; }
+    .muted { color: var(--muted); }
+
+    .shows { margin-top: 26px; }
+    .show {
+      display: grid;
+      grid-template-columns: 145px 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .show:last-child { border-bottom: 0; }
+    .date { color: var(--accent2); font-weight: 800; }
+    .venue { font-weight: 800; }
+    .details { color: var(--muted); font-size: 0.95rem; }
+    .badge {
+      border: 1px solid var(--line);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .media-placeholder {
+      aspect-ratio: 16 / 9;
+      border-radius: 22px;
+      border: 1px dashed rgba(255,255,255,0.35);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      text-align: center;
+      padding: 22px;
+      background: rgba(0,0,0,0.18);
+    }
+    ul { padding-left: 20px; color: var(--muted); }
+    li { margin: 7px 0; }
+
+    .booking {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(216,166,75,0.22), rgba(255,255,255,0.07));
+    }
+    .booking .lead { margin-left: auto; margin-right: auto; }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 35px 22px 55px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 800px) {
+      .nav-inner { flex-direction: column; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+      .grid { grid-template-columns: 1fr; }
+      .show { grid-template-columns: 1fr; gap: 4px; }
+      .badge { justify-self: start; margin-top: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Jenny Slyder</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#shows">Shows</a>
+        <a href="#music">Music</a>
+        <a href="#booking">Booking</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow">Live acoustic music • Arizona</div>
+      <h1>Jenny Slyder</h1>
+      <p class="subtitle">Heartfelt acoustic music for restaurants, patios, private parties, community events, and intimate live music nights.</p>
+      <div class="actions">
+        <a class="btn primary" href="#booking">Book Jenny</a>
+        <a class="btn" href="#shows">View Shows</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2 class="section-title">Warm, soulful, and easy to listen to.</h2>
+      <p class="lead">Jenny Slyder brings a relaxed acoustic sound, familiar songs, and a welcoming stage presence to every room she plays. Her sets are a good fit for dinner crowds, patios, private events, and local gatherings where the music should feel personal, polished, and real.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>For venues</h3>
+          <p class="muted">Solo acoustic performances that work well for restaurants, breweries, wineries, coffeehouses, resorts, and community events.</p>
+        </div>
+        <div class="card">
+          <h3>For private events</h3>
+          <p class="muted">Music for house concerts, parties, small celebrations, and special evenings where live acoustic music adds the right atmosphere.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="shows">
+      <h2 class="section-title">Upcoming Shows</h2>
+      <p class="lead">Add Jenny’s current public dates here. This section is easy to update as new bookings come in.</p>
+      <div class="card shows">
+        <div class="show">
+          <div class="date">Add Date</div>
+          <div>
+            <div class="venue">Venue Name</div>
+            <div class="details">City, AZ • Time TBD</div>
+          </div>
+          <div class="badge">Public show</div>
+        </div>
+        <div class="show">
+          <div class="date">Add Date</div>
+          <div>
+            <div class="venue">Venue Name</div>
+            <div class="details">City, AZ • Time TBD</div>
+          </div>
+          <div class="badge">Public show</div>
+        </div>
+        <div class="show">
+          <div class="date">Add Date</div>
+          <div>
+            <div class="venue">Venue Name</div>
+            <div class="details">City, AZ • Time TBD</div>
+          </div>
+          <div class="badge">Public show</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music">
+      <h2 class="section-title">Music</h2>
+      <p class="lead">Add live videos, song clips, or Facebook/YouTube links here so venues can quickly hear Jenny’s sound.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Live video</h3>
+          <div class="media-placeholder">Replace this block with a YouTube embed or a live performance video.</div>
+        </div>
+        <div class="card">
+          <h3>Style</h3>
+          <ul>
+            <li>Acoustic favorites</li>
+            <li>Country and Americana</li>
+            <li>Classic rock</li>
+            <li>Folk and singer-songwriter songs</li>
+            <li>Original music and special requests</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="card booking">
+        <h2 class="section-title">Book Jenny</h2>
+        <p class="lead">For booking inquiries, private events, and venue availability, contact Jenny directly.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:booking@example.com">Email Jenny</a>
+          <a class="btn" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+        <p class="muted">Replace the email and Facebook link with Jenny’s real contact information before publishing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Jenny Slyder</span>
+    <span>Live Acoustic Music • jennyslyder.com</span>
+  </footer>
+</body>
+</html>
