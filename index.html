@@ -61,30 +61,43 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 110px 20px 70px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+      align-items: center;
+      gap: 36px;
+      padding: 108px max(22px, calc((100vw - 1120px)/2)) 70px;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(15,13,10,.92) 0%, rgba(15,13,10,.72) 43%, rgba(15,13,10,.38) 100%),
-        url('images/jenny-live.jpg') right top / contain no-repeat,
-        radial-gradient(circle at top, #4b3421 0%, #1a120c 55%, #0b0907 100%);
+      background: radial-gradient(circle at top, #4b3421 0%, #1a120c 55%, #0b0907 100%);
     }
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, var(--bg) 0%, transparent 30%);
+      background: linear-gradient(0deg, var(--bg) 0%, transparent 24%);
       pointer-events: none;
     }
     .hero-inner {
       position: relative;
       z-index: 2;
-      max-width: 850px;
-      margin-right: auto;
-      margin-left: max(20px, calc((100vw - 1120px)/2));
+      max-width: 680px;
       text-align: left;
+    }
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      align-self: end;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-photo img {
+      width: min(100%, 520px);
+      max-height: calc(100vh - 120px);
+      object-fit: contain;
+      object-position: top center;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      box-shadow: 0 28px 90px rgba(0,0,0,.45);
+      background: rgba(0,0,0,.25);
     }
     .eyebrow {
       color: var(--accent);
@@ -194,11 +207,18 @@
       .nav-wrap { flex-direction: column; padding: 12px 18px; }
       .links { flex-wrap: wrap; justify-content: center; gap: 12px; }
       .hero {
-        background:
-          linear-gradient(0deg, rgba(15,13,10,.96) 0%, rgba(15,13,10,.66) 62%, rgba(15,13,10,.32) 100%),
-          url('images/jenny-live.jpg') center 12% / cover no-repeat;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 126px 18px 56px;
       }
       .hero-inner { text-align: center; margin: 0 auto; }
+      .hero-photo { order: -1; align-self: center; }
+      .hero-photo img {
+        width: min(100%, 430px);
+        max-height: 52vh;
+        border-radius: 22px;
+      }
       .buttons { justify-content: center; }
       .grid { grid-template-columns: 1fr; }
       .feature-img { min-height: 260px; }
@@ -228,6 +248,9 @@
         <a class="button primary" href="mailto:kochiejar@gmail.com">Book Jenny</a>
         <a class="button" href="https://www.facebook.com/justsingin/" target="_blank" rel="noopener">Upcoming Shows</a>
       </div>
+    </div>
+    <div class="hero-photo" aria-hidden="true">
+      <img src="images/jenny-live.jpg" alt="Jenny Slyder performing live with guitar" />
     </div>
   </header>
 
