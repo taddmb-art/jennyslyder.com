@@ -4,94 +4,83 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jenny Slyder | Live Music</title>
-  <meta name="description" content="Jenny Slyder is a live musician with over 20 years of experience performing country, rock, pop, classics, and original music.">
+  <meta name="description" content="Jenny Slyder performs live music, covers, classics, and original songs with a unique style and sound.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home">Jenny Slyder</a>
-    <nav class="nav">
+    <a class="brand" href="#home">Jenny <span>Slyder</span></a>
+
+    <button class="menu-toggle" aria-label="Open navigation" onclick="toggleMenu()">☰</button>
+
+    <nav class="nav" id="nav">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#shows">Shows</a>
       <a href="#media">Media</a>
       <a href="#booking">Booking</a>
-      <a class="nav-login" href="private/">Promoter Login</a>
+      <a href="private/">Promoter Login</a>
     </nav>
   </header>
 
   <main id="home">
     <section class="hero">
-      <div class="hero-copy">
+      <div class="hero-inner">
         <p class="eyebrow">Live Music • Covers • Originals</p>
-        <h1>Jenny Slyder</h1>
-        <p class="tagline">A unique style and sound with edge, power, and heart.</p>
-        <div class="hero-actions">
-          <a class="button" href="#booking">Book Jenny</a>
-          <a class="button button-secondary" href="private/">Promoter Login</a>
-        </div>
-      </div>
-
-      <div class="hero-image-card">
-        <img src="assets/jenny-slyder-promo.jpg" alt="Jenny Slyder promotional graphic">
+        <img class="hero-logo" src="assets/jenny-slyder-hero.png" alt="Jenny Slyder hero image">
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="container narrow">
-        <h2>About Jenny</h2>
-        <p>Bringing a unique style and sound, Jenny offers a wide variety of music, performing everything from Loretta Lynn and Patsy Cline to The Cranberries and Miley Cyrus, along with original music she has written and released internationally.</p>
-        <p>With over 20 years of experience, Jenny has performed at major festivals, clubs, and venues for audiences across the country. She has also opened shows for Johnny Lee, Moe Bandy, and Sunny Sweeney.</p>
-        <p>Whether playing for large crowds or intimate gatherings, Jenny delivers a professional, fun, and upbeat experience for everyone in attendance.</p>
-      </div>
-    </section>
-
-    <section class="section highlights">
-      <div class="container">
-        <h2>Performance Highlights</h2>
-        <div class="cards">
-          <article><h3>20+ Years Experience</h3><p>Major festivals, clubs, venues, private events, and intimate rooms.</p></article>
-          <article><h3>Wide Song Variety</h3><p>Classic country, modern country, rock, pop, familiar favorites, and originals.</p></article>
-          <article><h3>Professional & Upbeat</h3><p>A fun, crowd-friendly performance built for audiences big and small.</p></article>
-        </div>
+    <section class="about section" id="about">
+      <div class="container narrow centered">
+        <p class="section-label">★ About Jenny ★</p>
+        <h1>Bringing a Unique Style and Sound</h1>
+        <p>
+          Bringing a unique style and sound, Jenny offers a wide variety of music,
+          performing everything from Loretta Lynn and Patsy Cline to The Cranberries
+          and Miley Cyrus, along with original music she has written and released
+          internationally.
+        </p>
+        <p>
+          With over 20 years of experience, Jenny has performed at major festivals,
+          clubs, and venues for audiences across the country. She has also opened
+          shows for Johnny Lee, Moe Bandy, and Sunny Sweeney.
+        </p>
+        <p>
+          Whether playing for large crowds or intimate gatherings, Jenny delivers a
+          professional, fun, and upbeat experience for everyone in attendance.
+        </p>
       </div>
     </section>
 
     <section class="section shows" id="shows">
-      <div class="container">
+      <div class="container narrow centered">
+        <p class="section-label">★ Shows ★</p>
         <h2>Upcoming Shows</h2>
-        <p class="muted">Add upcoming venue dates here, or link this section to Jenny's Facebook events.</p>
-        <div class="show-list">
-          <div class="show-item">
-            <strong>Upcoming Date</strong>
-            <span>Venue Name • City, State</span>
-          </div>
-          <div class="show-item">
-            <strong>Upcoming Date</strong>
-            <span>Venue Name • City, State</span>
-          </div>
-        </div>
+        <p>Add upcoming venue dates here or link this section to Jenny's Facebook events.</p>
       </div>
     </section>
 
     <section class="section media" id="media">
-      <div class="container">
-        <h2>Media</h2>
-        <p>Photos, performance videos, music links, and social media links can be added here.</p>
-        <div class="media-links">
-          <a href="#">Facebook</a>
-          <a href="#">YouTube</a>
-          <a href="#">Music / Streaming</a>
-        </div>
+      <div class="container narrow centered">
+        <p class="section-label">★ Media ★</p>
+        <h2>Photos, Video & Music</h2>
+        <p>Add performance videos, social links, streaming links, and promotional photos here.</p>
       </div>
     </section>
 
     <section class="section booking" id="booking">
-      <div class="container narrow">
-        <h2>Booking</h2>
-        <p>Jenny is available for live performances, local venues, private events, festivals, restaurants, clubs, and special gatherings.</p>
-        <p class="contact-note">Add booking email, phone number, Facebook link, or contact form here.</p>
-        <a class="button" href="private/">Promoter Materials</a>
+      <div class="container narrow centered">
+        <p class="section-label">★ Booking ★</p>
+        <h2>Book Jenny</h2>
+        <p>
+          Jenny is available for live performances, local venues, private events,
+          festivals, restaurants, clubs, and special gatherings.
+        </p>
+        <div class="button-row">
+          <a class="button" href="mailto:booking@example.com">Booking Email</a>
+          <a class="button outline" href="private/">Promoter Materials</a>
+        </div>
       </div>
     </section>
   </main>
@@ -100,6 +89,12 @@
     <p>© <span id="year"></span> Jenny Slyder. All rights reserved.</p>
   </footer>
 
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("open");
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
