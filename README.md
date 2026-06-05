@@ -1,12 +1,23 @@
-# Jenny Slyder Website Update - Fixed Hero
+# Jenny Slyder Website with Private Promoter Area
 
-This version fixes the cropped top image by removing the flyer as a full-screen background.
-The flyer now displays intact in the About section.
+Upload these files to the root of the GitHub Pages repository.
 
-Upload these files to the root of the GitHub repository:
+## Private Area
 
-- `index.html`
-- `styles.css`
-- `assets/jenny-slyder-promo.jpg`
+URL:
+`/private/`
 
-If GitHub Pages is already enabled, commit the files and refresh the live site after the deployment finishes.
+Default access code:
+`jenny2026`
+
+Important: this is a light login only. It is fine for promoter materials, setlists, and EPK links, but it is not true secure authentication because GitHub Pages is static.
+
+## To Change the Access Code
+
+Open:
+`private/index.html`
+
+Find:
+`const PASSWORD = "jenny2026";`
+
+Change the value inside the quotes.

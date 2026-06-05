@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Private Promoter Area | Jenny Slyder</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="private-page">
+  <main class="private-card">
+    <div class="private-top">
+      <div>
+        <p class="eyebrow">Jenny Slyder</p>
+        <h1 style="font-size:3rem;margin-bottom:.5rem">Promoter Area</h1>
+        <p>EPK, setlists, promotional links, and venue-ready information.</p>
+      </div>
+      <button class="button button-secondary small-button" onclick="logout()">Log Out</button>
+    </div>
+
+    <div class="private-grid">
+      <section class="resource">
+        <h3>Electronic Press Kit</h3>
+        <ul>
+          <li><a href="#" style="color:#e4ad60">Download EPK PDF</a></li>
+          <li><a href="#" style="color:#e4ad60">Short Bio</a></li>
+          <li><a href="#" style="color:#e4ad60">Long Bio</a></li>
+        </ul>
+      </section>
+
+      <section class="resource">
+        <h3>Promo Material</h3>
+        <ul>
+          <li><a href="../assets/jenny-slyder-promo.jpg" style="color:#e4ad60">Promo Image</a></li>
+          <li><a href="#" style="color:#e4ad60">High-Resolution Photos</a></li>
+          <li><a href="#" style="color:#e4ad60">Poster / Flyer Assets</a></li>
+        </ul>
+      </section>
+
+      <section class="resource">
+        <h3>Setlists</h3>
+        <ul>
+          <li><a href="#" style="color:#e4ad60">Restaurant / Patio Set</a></li>
+          <li><a href="#" style="color:#e4ad60">Country Classics Set</a></li>
+          <li><a href="#" style="color:#e4ad60">Mixed Covers Set</a></li>
+        </ul>
+      </section>
+
+      <section class="resource">
+        <h3>Booking / Venue Info</h3>
+        <ul>
+          <li>Solo acoustic performance</li>
+          <li>Country, rock, pop, classics, and originals</li>
+          <li>Available for venues, festivals, private events, and special gatherings</li>
+        </ul>
+      </section>
+
+      <section class="resource">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="#" style="color:#e4ad60">Facebook Page</a></li>
+          <li><a href="#" style="color:#e4ad60">Music / Streaming Link</a></li>
+          <li><a href="#" style="color:#e4ad60">YouTube / Video Link</a></li>
+        </ul>
+      </section>
+
+      <section class="resource">
+        <h3>Notes</h3>
+        <p>Replace these placeholder links with actual EPK files, photos, videos, and setlist documents as they become available.</p>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    if (sessionStorage.getItem("jennyPrivateAccess") !== "yes") {
+      window.location.href = "index.html";
+    }
+
+    function logout() {
+      sessionStorage.removeItem("jennyPrivateAccess");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

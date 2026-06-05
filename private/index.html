@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Promoter Login | Jenny Slyder</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="private-page">
+  <section class="login-card">
+    <p class="eyebrow">Private Access</p>
+    <h1 style="font-size:3rem">Promoter Login</h1>
+    <p>Enter the access code for Jenny's EPK, setlists, promo links, and booking materials.</p>
+    <input id="password" type="password" placeholder="Access code" autocomplete="current-password">
+    <button class="button" onclick="login()">Enter</button>
+    <p id="error" class="error"></p>
+  </section>
+
+  <script>
+    const PASSWORD = "jenny2026";
+
+    function login() {
+      const entered = document.getElementById("password").value.trim();
+      if (entered === PASSWORD) {
+        sessionStorage.setItem("jennyPrivateAccess", "yes");
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("error").textContent = "Incorrect access code.";
+      }
+    }
+
+    document.getElementById("password").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") login();
+    });
+  </script>
+</body>
+</html>
