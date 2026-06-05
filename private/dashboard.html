@@ -21,28 +21,27 @@
       <section class="resource">
         <h3>Electronic Press Kit</h3>
         <ul>
-          <li><a href="#" style="color:#e4ad60">Download EPK PDF</a></li>
-          <li><a href="#" style="color:#e4ad60">Short Bio</a></li>
-          <li><a href="#" style="color:#e4ad60">Long Bio</a></li>
+          <li><a href="#" >Download EPK PDF</a></li>
+          <li><a href="#" >Short Bio</a></li>
+          <li><a href="#" >Long Bio</a></li>
         </ul>
       </section>
 
       <section class="resource">
         <h3>Promo Material</h3>
         <ul>
-          <li><a href="../assets/jenny-slyder-promo.jpg" style="color:#e4ad60">Promo Image</a></li>
-          <li><a href="#" style="color:#e4ad60">High-Resolution Photos</a></li>
-          <li><a href="#" style="color:#e4ad60">Poster / Flyer Assets</a></li>
+          <li><a href="../assets/jenny-slyder-promo.jpg">Promo Image</a></li>
+          <li><a href="#">High-Resolution Photos</a></li>
+          <li><a href="#">Poster / Flyer Assets</a></li>
         </ul>
       </section>
 
       <section class="resource">
-        <h3>Setlists</h3>
+        <h3>Setlist</h3>
         <ul>
-          <li><a href="#" style="color:#e4ad60">Restaurant / Patio Set</a></li>
-          <li><a href="#" style="color:#e4ad60">Country Classics Set</a></li>
-          <li><a href="#" style="color:#e4ad60">Mixed Covers Set</a></li>
+          <li><a href="../files/general-setlist.pdf">General Setlist</a></li>
         </ul>
+        <p class="muted">Upload the setlist PDF to <code>/files/general-setlist.pdf</code> in GitHub.</p>
       </section>
 
       <section class="resource">
@@ -57,28 +56,21 @@
       <section class="resource">
         <h3>Links</h3>
         <ul>
-          <li><a href="#" style="color:#e4ad60">Facebook Page</a></li>
-          <li><a href="#" style="color:#e4ad60">Music / Streaming Link</a></li>
-          <li><a href="#" style="color:#e4ad60">YouTube / Video Link</a></li>
+          <li><a href="#">Facebook Page</a></li>
+          <li><a href="#">Music / Streaming Link</a></li>
+          <li><a href="#">YouTube / Video Link</a></li>
         </ul>
       </section>
 
       <section class="resource">
         <h3>Notes</h3>
-        <p>Replace these placeholder links with actual EPK files, photos, videos, and setlist documents as they become available.</p>
+        <p>Replace placeholder links with actual EPK files, photos, videos, and setlist documents.</p>
       </section>
     </div>
   </main>
-
   <script>
-    if (sessionStorage.getItem("jennyPrivateAccess") !== "yes") {
-      window.location.href = "index.html";
-    }
-
-    function logout() {
-      sessionStorage.removeItem("jennyPrivateAccess");
-      window.location.href = "index.html";
-    }
+    if(sessionStorage.getItem("jennyPrivateAccess")!=="yes"){window.location.href="index.html"}
+    function logout(){sessionStorage.removeItem("jennyPrivateAccess");window.location.href="index.html"}
   </script>
 </body>
 </html>

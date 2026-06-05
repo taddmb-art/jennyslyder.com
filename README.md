@@ -1,23 +1,19 @@
-# Jenny Slyder Website with Private Promoter Area
+# Jenny Slyder Website V2
 
-Upload these files to the root of the GitHub Pages repository.
+Includes:
+- Header/menu navigation
+- Promo image positioned in the top-right hero section
+- About, highlights, shows, media, and booking sections
+- Private promoter login area
+- General setlist link placeholder
 
-## Private Area
-
-URL:
+Private login URL:
 `/private/`
 
 Default access code:
 `jenny2026`
 
-Important: this is a light login only. It is fine for promoter materials, setlists, and EPK links, but it is not true secure authentication because GitHub Pages is static.
-
-## To Change the Access Code
-
-Open:
-`private/index.html`
-
-Find:
-`const PASSWORD = "jenny2026";`
-
-Change the value inside the quotes.
+To upload a setlist:
+1. Create or use the `files` folder.
+2. Upload the PDF as `general-setlist.pdf`.
+3. The private page already links to `/files/general-setlist.pdf`.

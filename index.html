@@ -8,30 +8,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero__overlay">
-      <p class="eyebrow">Live Music • Covers • Originals</p>
-      <h1>Jenny Slyder</h1>
-      <p class="tagline">A unique style and sound with edge, power, and heart.</p>
-      <div class="hero-actions">
-        <a class="button" href="#booking">Book Jenny</a>
-        <a class="button button-secondary" href="private/">Promoter Login</a>
-      </div>
-    </div>
+  <header class="site-header">
+    <a class="brand" href="#home">Jenny Slyder</a>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#shows">Shows</a>
+      <a href="#media">Media</a>
+      <a href="#booking">Booking</a>
+      <a class="nav-login" href="private/">Promoter Login</a>
+    </nav>
   </header>
 
-  <main>
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Live Music • Covers • Originals</p>
+        <h1>Jenny Slyder</h1>
+        <p class="tagline">A unique style and sound with edge, power, and heart.</p>
+        <div class="hero-actions">
+          <a class="button" href="#booking">Book Jenny</a>
+          <a class="button button-secondary" href="private/">Promoter Login</a>
+        </div>
+      </div>
+
+      <div class="hero-image-card">
+        <img src="assets/jenny-slyder-promo.jpg" alt="Jenny Slyder promotional graphic">
+      </div>
+    </section>
+
     <section class="section about" id="about">
-      <div class="container two-column">
-        <div>
-          <h2>About Jenny</h2>
-          <p>Bringing a unique style and sound, Jenny offers a wide variety of music, performing everything from Loretta Lynn and Patsy Cline to The Cranberries and Miley Cyrus, along with original music she has written and released internationally.</p>
-          <p>With over 20 years of experience, Jenny has performed at major festivals, clubs, and venues for audiences across the country. She has also opened shows for Johnny Lee, Moe Bandy, and Sunny Sweeney.</p>
-          <p>Whether playing for large crowds or intimate gatherings, Jenny delivers a professional, fun, and upbeat experience for everyone in attendance.</p>
-        </div>
-        <div class="promo-card">
-          <img src="assets/jenny-slyder-promo.jpg" alt="Jenny Slyder promotional graphic">
-        </div>
+      <div class="container narrow">
+        <h2>About Jenny</h2>
+        <p>Bringing a unique style and sound, Jenny offers a wide variety of music, performing everything from Loretta Lynn and Patsy Cline to The Cranberries and Miley Cyrus, along with original music she has written and released internationally.</p>
+        <p>With over 20 years of experience, Jenny has performed at major festivals, clubs, and venues for audiences across the country. She has also opened shows for Johnny Lee, Moe Bandy, and Sunny Sweeney.</p>
+        <p>Whether playing for large crowds or intimate gatherings, Jenny delivers a professional, fun, and upbeat experience for everyone in attendance.</p>
       </div>
     </section>
 
@@ -46,11 +57,41 @@
       </div>
     </section>
 
-    <section class="section booking" id="booking">
+    <section class="section shows" id="shows">
       <div class="container">
+        <h2>Upcoming Shows</h2>
+        <p class="muted">Add upcoming venue dates here, or link this section to Jenny's Facebook events.</p>
+        <div class="show-list">
+          <div class="show-item">
+            <strong>Upcoming Date</strong>
+            <span>Venue Name • City, State</span>
+          </div>
+          <div class="show-item">
+            <strong>Upcoming Date</strong>
+            <span>Venue Name • City, State</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section media" id="media">
+      <div class="container">
+        <h2>Media</h2>
+        <p>Photos, performance videos, music links, and social media links can be added here.</p>
+        <div class="media-links">
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+          <a href="#">Music / Streaming</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="container narrow">
         <h2>Booking</h2>
         <p>Jenny is available for live performances, local venues, private events, festivals, restaurants, clubs, and special gatherings.</p>
         <p class="contact-note">Add booking email, phone number, Facebook link, or contact form here.</p>
+        <a class="button" href="private/">Promoter Materials</a>
       </div>
     </section>
   </main>
