@@ -1,310 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jenny Slyder - Arizona acoustic performer available for live music, private parties, community events, restaurants, patios, and intimate music nights." />
-  <title>Jenny Slyder | Live Acoustic Music</title>
-  <style>
-    :root {
-      --bg: #0f0d0a;
-      --card: rgba(26, 22, 18, 0.88);
-      --text: #fff8ee;
-      --muted: #dacbb6;
-      --accent: #e6b85c;
-      --accent2: #d729d2;
-      --line: rgba(255,255,255,0.12);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
-      background: rgba(10, 8, 6, 0.84);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 15px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-    }
-    .brand {
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: .02em;
-      font-size: 1.05rem;
-    }
-    .links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-    .links a:hover { color: var(--accent); }
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
-      align-items: center;
-      gap: 36px;
-      padding: 108px max(22px, calc((100vw - 1120px)/2)) 70px;
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(circle at top, #4b3421 0%, #1a120c 55%, #0b0907 100%);
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, var(--bg) 0%, transparent 24%);
-      pointer-events: none;
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      text-align: left;
-    }
-    .hero-photo {
-      position: relative;
-      z-index: 1;
-      align-self: end;
-      display: flex;
-      justify-content: center;
-    }
-    .hero-photo img {
-      width: min(100%, 520px);
-      max-height: calc(100vh - 120px);
-      object-fit: contain;
-      object-position: top center;
-      border-radius: 28px;
-      border: 1px solid var(--line);
-      box-shadow: 0 28px 90px rgba(0,0,0,.45);
-      background: rgba(0,0,0,.25);
-    }
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .26em;
-      font-weight: 800;
-      font-size: .82rem;
-      margin-bottom: 18px;
-    }
-    h1 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(4rem, 11vw, 8.4rem);
-      line-height: .9;
-      margin: 0 0 22px;
-      font-weight: 500;
-      text-shadow: 0 12px 45px rgba(0,0,0,.65);
-    }
-    .tagline {
-      max-width: 640px;
-      font-size: clamp(1.15rem, 2vw, 1.45rem);
-      color: var(--muted);
-      margin: 0 0 32px;
-    }
-    .buttons { display: flex; flex-wrap: wrap; gap: 13px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--accent);
-      padding: 12px 20px;
-      border-radius: 999px;
-      font-weight: 800;
-      transition: .18s ease;
-      min-width: 132px;
-    }
-    .button.primary { background: var(--accent); color: #171009; }
-    .button.pink { border-color: var(--accent2); color: #fff; }
-    .button:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(0,0,0,.28); }
-    section {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 78px 22px;
-    }
-    h2 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.05;
-      margin: 0 0 20px;
-      font-weight: 500;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
-      align-items: stretch;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      padding: 30px;
-      box-shadow: 0 20px 65px rgba(0,0,0,.25);
-    }
-    .muted, .card p { color: var(--muted); }
-    .feature-img {
-      width: 100%;
-      height: 100%;
-      min-height: 330px;
-      object-fit: cover;
-      border-radius: 26px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 65px rgba(0,0,0,.28);
-    }
-    .callout {
-      background:
-        linear-gradient(135deg, rgba(215, 41, 210, .16), rgba(230, 184, 92, .14)),
-        var(--card);
-      text-align: center;
-    }
-    .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 24px;
-    }
-    .email {
-      color: var(--accent);
-      font-weight: 800;
-      word-break: break-word;
-    }
-    .poster {
-      max-width: 360px;
-      width: 100%;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 65px rgba(0,0,0,.28);
-    }
-    footer {
-      text-align: center;
-      padding: 34px 20px 48px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      font-size: .9rem;
-    }
-    @media (max-width: 840px) {
-      .nav-wrap { flex-direction: column; padding: 12px 18px; }
-      .links { flex-wrap: wrap; justify-content: center; gap: 12px; }
-      .hero {
-        min-height: auto;
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 126px 18px 56px;
-      }
-      .hero-inner { text-align: center; margin: 0 auto; }
-      .hero-photo { order: -1; align-self: center; }
-      .hero-photo img {
-        width: min(100%, 430px);
-        max-height: 52vh;
-        border-radius: 22px;
-      }
-      .buttons { justify-content: center; }
-      .grid { grid-template-columns: 1fr; }
-      .feature-img { min-height: 260px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jenny Slyder | Live Music</title>
+  <meta name="description" content="Jenny Slyder is a live musician with over 20 years of experience performing country, rock, pop, classics, and original music.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-wrap">
-      <a class="brand" href="#home">Jenny Slyder</a>
-      <div class="links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="https://www.facebook.com/justsingin/" target="_blank" rel="noopener">Shows</a>
-        <a href="#music">Videos</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="hero-inner">
-      <div class="eyebrow">Live Acoustic Music • Arizona</div>
+  <header class="hero">
+    <div class="hero__overlay">
+      <p class="eyebrow">Live Music • Covers • Originals</p>
       <h1>Jenny Slyder</h1>
-      <p class="tagline">Heartfelt acoustic music for restaurants, patios, private parties, community events, and intimate live music nights.</p>
-      <div class="buttons">
-        <a class="button primary" href="mailto:kochiejar@gmail.com">Book Jenny</a>
-        <a class="button" href="https://www.facebook.com/justsingin/" target="_blank" rel="noopener">Upcoming Shows</a>
-      </div>
-    </div>
-    <div class="hero-photo" aria-hidden="true">
-      <img src="images/jenny-live.jpg" alt="Jenny Slyder performing live with guitar" />
+      <p class="tagline">A unique style and sound with edge, power, and heart.</p>
+      <a class="button" href="#booking">Book Jenny</a>
     </div>
   </header>
 
-  <section id="about">
-    <div class="grid">
-      <div class="card">
-        <h2>About Jenny</h2>
-        <p>Jenny Slyder is an Arizona acoustic performer known for warm vocals, heartfelt songs, and an easygoing live presence. Her sets are built for connection — familiar songs, honest delivery, and the kind of music that makes a room feel comfortable.</p>
-        <p>Jenny is available for restaurants, patios, community events, private parties, and special occasions throughout Arizona.</p>
-        <div class="buttons">
-          <a class="button primary" href="mailto:kochiejar@gmail.com">Contact Jenny</a>
+  <main>
+    <section class="section about" id="about">
+      <div class="container two-column">
+        <div>
+          <h2>About Jenny</h2>
+          <p>
+            Bringing a unique style and sound, Jenny offers a wide variety of music,
+            performing everything from Loretta Lynn and Patsy Cline to The Cranberries
+            and Miley Cyrus, along with original music she has written and released
+            internationally.
+          </p>
+          <p>
+            With over 20 years of experience, Jenny has performed at major festivals,
+            clubs, and venues for audiences across the country. She has also opened
+            shows for Johnny Lee, Moe Bandy, and Sunny Sweeney.
+          </p>
+          <p>
+            Whether playing for large crowds or intimate gatherings, Jenny delivers a
+            professional, fun, and upbeat experience for everyone in attendance.
+          </p>
+        </div>
+        <div class="promo-card">
+          <img src="assets/jenny-slyder-promo.jpg" alt="Jenny Slyder promotional graphic">
         </div>
       </div>
-      <img class="feature-img" src="images/jenny-road.jpg" alt="Jenny Slyder logo over an open road" />
-    </div>
-  </section>
+    </section>
 
-  <section id="music">
-    <div class="grid">
-      <div class="card">
-        <h2>Music & Videos</h2>
-        <p>Follow Jenny online for performance clips, videos, show updates, and new music.</p>
-        <div class="socials">
-          <a class="button primary" href="https://www.youtube.com/@jennyslyder4734" target="_blank" rel="noopener">YouTube</a>
-          <a class="button pink" href="https://www.tiktok.com/@jennyslyder?_r=1&_t=ZP-95teMzfJycZ" target="_blank" rel="noopener">TikTok</a>
-          <a class="button" href="https://www.facebook.com/justsingin/" target="_blank" rel="noopener">Facebook</a>
+    <section class="section highlights">
+      <div class="container">
+        <h2>Performance Highlights</h2>
+        <div class="cards">
+          <article>
+            <h3>20+ Years Experience</h3>
+            <p>Major festivals, clubs, venues, private events, and intimate rooms.</p>
+          </article>
+          <article>
+            <h3>Wide Song Variety</h3>
+            <p>Classic country, modern country, rock, pop, familiar favorites, and originals.</p>
+          </article>
+          <article>
+            <h3>Professional & Upbeat</h3>
+            <p>A fun, crowd-friendly performance built for audiences big and small.</p>
+          </article>
         </div>
       </div>
-      <div class="card">
-        <h2>Upcoming Shows</h2>
-        <p>Jenny usually posts current show dates and event details on Facebook.</p>
-        <div class="buttons">
-          <a class="button primary" href="https://www.facebook.com/justsingin/" target="_blank" rel="noopener">View Shows on Facebook</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="card callout">
-      <h2>Booking & Contact</h2>
-      <p>For booking inquiries, private events, venue availability, and live music questions, contact Jenny directly.</p>
-      <p class="email">Contact Jenny</p>
-      <div class="socials">
-        <a class="button primary" href="mailto:kochiejar@gmail.com">Contact Jenny</a>
-        <a class="button" href="https://www.facebook.com/justsingin/" target="_blank" rel="noopener">Facebook</a>
-        <a class="button" href="https://www.youtube.com/@jennyslyder4734" target="_blank" rel="noopener">YouTube</a>
-        <a class="button pink" href="https://www.tiktok.com/@jennyslyder?_r=1&_t=ZP-95teMzfJycZ" target="_blank" rel="noopener">TikTok</a>
+    <section class="section booking" id="booking">
+      <div class="container">
+        <h2>Booking</h2>
+        <p>
+          Jenny is available for live performances, local venues, private events,
+          festivals, restaurants, clubs, and special gatherings.
+        </p>
+        <p class="contact-note">
+          Add booking email, phone number, Facebook link, or contact form here.
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    © 2026 Jenny Slyder • Live Acoustic Music • Arizona
+    <p>© <span id="year"></span> Jenny Slyder. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
