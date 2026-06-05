@@ -1,22 +1,12 @@
-# Jenny Slyder Website Update
+# Jenny Slyder Website Update - Fixed Hero
 
-This is a simple static website package ready to upload to GitHub Pages or any basic web host.
+This version fixes the cropped top image by removing the flyer as a full-screen background.
+The flyer now displays intact in the About section.
 
-## Files
+Upload these files to the root of the GitHub repository:
 
-- `index.html` — main webpage
-- `styles.css` — website styling
-- `assets/jenny-slyder-promo.jpg` — promotional image
+- `index.html`
+- `styles.css`
+- `assets/jenny-slyder-promo.jpg`
 
-## GitHub Pages Upload
-
-1. Create a new GitHub repository.
-2. Upload all files from this folder.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-5. Save.
-
-GitHub will publish the site after a minute or two.
+If GitHub Pages is already enabled, commit the files and refresh the live site after the deployment finishes.
