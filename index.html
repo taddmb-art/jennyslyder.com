@@ -16,34 +16,30 @@
       <a href="#about">About</a>
       <a href="#shows">Shows</a>
       <a href="#media">Media</a>
-      <a href="mailto:kochiejar@gmail.com">Booking</a>
-      <a href="promoter.html">Promoter Login</a>
+      <a href="#booking">Booking</a>
+      <a href="#promoter">Promoter Login</a>
     </nav>
   </header>
 
   <main id="home">
-    <section class="hero" aria-label="Jenny Slyder hero image">
-      <div class="hero-image" role="img" aria-label="Jenny Slyder performing with guitar"></div>
-      <div class="hero-overlay">
-        <p class="eyebrow">Live Music • Covers • Originals</p>
-        <h1>Jenny Slyder</h1>
-        <p class="lead">Powerful vocals, crowd favorites, and high-energy live performances across Arizona’s White Mountains.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="mailto:kochiejar@gmail.com">Book Jenny</a>
-          <a class="button secondary" href="#shows">Upcoming Shows</a>
-        </div>
+    <section class="hero-art" aria-label="Jenny Slyder hero image">
+      <img src="assets/jenny-slyder-hero.png" alt="Jenny Slyder performing with guitar" />
+    </section>
+
+    <section class="intro-card" aria-label="Jenny Slyder introduction">
+      <p class="eyebrow">Live Music • Covers • Originals</p>
+      <h1>Jenny Slyder</h1>
+      <p class="lead">Powerful vocals, crowd favorites, and high-energy live performances across Arizona’s White Mountains.</p>
+      <div class="hero-actions">
+        <a class="button primary js-email" href="#" data-user="kochiejar" data-domain="gmail.com">Book Jenny</a>
+        <a class="button secondary" href="#shows">Upcoming Shows</a>
       </div>
     </section>
 
-    <section id="about" class="section two-column">
-      <div>
-        <p class="section-kicker">About</p>
-        <h2>Big voice. Warm crowd connection. Real live energy.</h2>
-      </div>
-      <div class="copy-card">
-        <p>Jenny Slyder brings edge, warmth, and serious vocal power to every show. Her sets blend familiar covers, sing-along favorites, and original music built for a good night out.</p>
-        <p>Available for venues, private events, collaborations, and select special events.</p>
-      </div>
+    <section id="about" class="section about-clean">
+      <p class="section-kicker">About</p>
+      <h2>About Jenny</h2>
+      <p>Jenny Slyder brings edge, warmth, and serious vocal power to every show. Her sets blend familiar covers, sing-along favorites, and original music built for a good night out.</p>
     </section>
 
     <section id="shows" class="section split-panel">
@@ -74,7 +70,16 @@
         <h2>Bring Jenny to your venue or event</h2>
         <p>For booking inquiries, private events, venues, and collaborations:</p>
       </div>
-      <a class="email-link" href="mailto:kochiejar@gmail.com">kochiejar@gmail.com</a>
+      <a class="email-link js-email" href="#" data-user="kochiejar" data-domain="gmail.com">Click to email booking</a>
+    </section>
+
+    <section id="promoter" class="section promoter-panel">
+      <div>
+        <p class="section-kicker">Promoter Login</p>
+        <h2>Promoter resources</h2>
+        <p>Access EPK materials, setlists, promo links, and downloadable files.</p>
+      </div>
+      <a class="button secondary" href="promoter.html">Enter Promoter Area</a>
     </section>
   </main>
 

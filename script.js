@@ -9,3 +9,13 @@ if (toggle && nav) {
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 }
+
+
+// Build the booking email only when clicked so the plain address is not displayed on the page.
+document.querySelectorAll('.js-email').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const address = `${link.dataset.user}@${link.dataset.domain}`;
+    window.location.href = `mailto:${address}`;
+  });
+});
