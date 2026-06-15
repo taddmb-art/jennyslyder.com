@@ -1,12 +1,13 @@
 :root {
-  --bg: #030303;
-  --panel: #090909;
+  --bg: #050505;
+  --panel: #111;
+  --panel-soft: #16120b;
   --text: #f7f3ea;
-  --muted: #d6cbb8;
-  --gold: #f5a91b;
-  --gold-dark: #7a4e08;
-  --line: rgba(245, 169, 27, 0.35);
-  --shadow: rgba(245, 169, 27, 0.14);
+  --muted: #d1c4ae;
+  --gold: #f5a623;
+  --gold-soft: rgba(245, 166, 35, .24);
+  --line: rgba(245, 166, 35, .38);
+  --shadow: rgba(0, 0, 0, .48);
 }
 
 * { box-sizing: border-box; }
@@ -14,156 +15,130 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at 50% 10%, #181109 0, var(--bg) 44rem);
   color: var(--text);
-  line-height: 1.6;
 }
+a { color: inherit; }
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 12px 22px;
-  background: #000;
+  padding: 18px 28px;
   border-bottom: 1px solid var(--line);
+  background: rgba(0, 0, 0, .92);
+  backdrop-filter: blur(8px);
 }
 .brand {
-  color: var(--text);
   text-decoration: none;
-  font-size: clamp(1.35rem, 2vw, 2.1rem);
-  letter-spacing: .22em;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: clamp(1.1rem, 2.4vw, 1.8rem);
   font-weight: 900;
   white-space: nowrap;
 }
+.brand span { color: #fff; }
 .brand strong { color: var(--gold); }
 .nav-links {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: clamp(16px, 3vw, 42px);
-  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  text-align: center;
 }
 .nav-links a {
   color: var(--text);
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: .22em;
-  font-size: .8rem;
-  font-weight: 900;
+  font-size: .95rem;
+  line-height: 1.2;
+  opacity: .92;
 }
 .nav-links a:hover { color: var(--gold); }
-.menu-toggle { display: none; }
 
-.hero {
-  min-height: 720px;
-  padding: 42px 24px 60px;
-  border-bottom: 1px solid var(--line);
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.82), rgba(0,0,0,.45), rgba(0,0,0,.85)),
-    url("assets/jenny-hero.jpg");
-  background-size: cover;
-  background-position: center 18%;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.eyebrow {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: .55em;
-  font-size: .9rem;
-  font-weight: 900;
-  margin: 4px 0 24px;
-  text-align: center;
-}
+.section-pad { padding: 56px 22px; }
+.hero { min-height: 68vh; display: grid; place-items: center; }
 .hero-card {
-  width: min(980px, 100%);
-  min-height: 410px;
-  display: flex;
+  width: min(1060px, 100%);
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 34px;
   align-items: center;
-  padding: clamp(28px, 5vw, 60px);
+  padding: clamp(28px, 5vw, 64px);
   border: 1px solid var(--line);
-  background: linear-gradient(110deg, rgba(0,0,0,.72), rgba(0,0,0,.35), rgba(0,0,0,.72));
-  box-shadow: 0 35px 80px rgba(0,0,0,.65), 0 0 120px var(--shadow);
+  background: linear-gradient(135deg, rgba(16,16,16,.96), rgba(19,13,4,.94));
+  box-shadow: 0 24px 70px var(--shadow);
 }
-.hero-copy { max-width: 650px; }
-h1 {
-  margin: 0 0 12px;
-  text-transform: uppercase;
-  line-height: .82;
-  letter-spacing: .04em;
-  font-size: clamp(4.5rem, 12vw, 9rem);
-  font-weight: 900;
-}
+.eyebrow { color: var(--text); font-weight: 700; margin: 0 0 18px; }
+h1 { margin: 0; line-height: .88; text-transform: uppercase; font-size: clamp(4rem, 12vw, 9rem); letter-spacing: .03em; }
 h1 span, h1 strong { display: block; }
+h1 span { color: #fff; }
 h1 strong { color: var(--gold); }
-.hero p { max-width: 620px; margin: 0 0 22px; color: #f0e6d6; font-size: 1.05rem; }
-.button-row { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  color: #000;
-  background: var(--gold);
-  border: 2px solid var(--gold);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  font-weight: 900;
-  font-size: .86rem;
-}
-.btn.secondary { color: var(--gold); background: transparent; }
-.btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
-
-.section {
-  width: min(1060px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 64px 0;
-}
-.section h2 {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: .22em;
-  font-size: clamp(2.4rem, 5vw, 4.5rem);
-  line-height: 1;
-  margin: 0 0 22px;
-}
-.section p { max-width: 720px; color: var(--muted); }
-.alt { border-top: 1px solid rgba(245,169,27,.16); }
-.card-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
-.media-card {
-  color: var(--text);
-  background: var(--panel);
+.lead { max-width: 620px; color: var(--muted); font-size: 1.12rem; line-height: 1.55; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
   border: 1px solid var(--line);
-  padding: 28px 18px;
+  border-radius: 999px;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-weight: 900;
+  font-weight: 700;
+}
+.button.primary { background: var(--gold); color: #111; border-color: var(--gold); }
+
+.hero-photo-wrap, .media-card {
+  min-height: 340px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--gold-soft), rgba(255,255,255,.04));
+  display: grid;
+  place-items: center;
+}
+.hero-photo, .media-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.missing-image::before {
+  content: "Add image file: assets/jenny-slyder-hero.png";
+  color: var(--muted);
+  padding: 24px;
   text-align: center;
 }
-.media-card:hover { color: var(--gold); border-color: var(--gold); }
-.email-link { color: var(--gold); font-size: 1.2rem; font-weight: 800; }
-.small-note { font-size: .9rem; opacity: .75; }
-.footer { border-top: 1px solid var(--line); padding: 24px; text-align: center; color: var(--muted); }
+.media-card.missing-image::before { content: "Add image file: assets/jenny-slyder-promo.jpg"; }
 
-@media (max-width: 800px) {
-  .site-header { align-items: flex-start; }
-  .menu-toggle { display: block; background: transparent; color: var(--gold); border: 1px solid var(--line); padding: 8px 10px; font-size: 1.2rem; }
-  .nav-links { display: none; position: absolute; left: 0; right: 0; top: 60px; flex-direction: column; background: #000; padding: 18px; border-bottom: 1px solid var(--line); }
-  .nav-links.open { display: flex; }
-  .hero { min-height: 620px; background-position: center top; }
-  .eyebrow { letter-spacing: .25em; }
-  .hero-card { min-height: 360px; }
-  .card-grid { grid-template-columns: 1fr 1fr; }
+.section { border-top: 1px solid rgba(245,166,35,.18); }
+.section.alt { background: rgba(255,255,255,.025); }
+.section-inner { width: min(1080px, 100%); margin: 0 auto; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
+h2 { margin: 0 0 22px; color: var(--gold); text-transform: uppercase; letter-spacing: .16em; font-size: clamp(2.2rem, 5vw, 4.2rem); }
+h3 { color: var(--gold); margin-top: 0; }
+p { color: var(--muted); line-height: 1.7; font-size: 1rem; }
+.callout, .media-card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 26px; }
+.link-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
+.link-grid a { text-align: center; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); text-decoration: none; font-weight: 800; }
+.link-grid a:hover { color: #111; background: var(--gold); }
+.site-footer { padding: 32px 22px; text-align: center; border-top: 1px solid var(--line); }
+
+@media (max-width: 840px) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  .nav-links { justify-content: flex-start; gap: 12px 16px; }
+  .hero-card, .two-col { grid-template-columns: 1fr; }
+  .link-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 520px) {
-  .brand { font-size: 1.15rem; letter-spacing: .12em; }
-  .hero { padding-inline: 14px; }
-  .section { width: min(100% - 28px, 1060px); }
-  .card-grid { grid-template-columns: 1fr; }
+  .section-pad { padding: 38px 16px; }
+  .hero-card { padding: 24px; }
+  .link-grid { grid-template-columns: 1fr; }
 }

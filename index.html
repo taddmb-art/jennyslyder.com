@@ -4,79 +4,84 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jenny Slyder | Live Music</title>
-  <meta name="description" content="Jenny Slyder live music, covers, originals, booking, shows, media, and promoter resources." />
+  <meta name="description" content="Jenny Slyder live music, covers, originals, booking, media, and upcoming shows." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Jenny Slyder home"><span>JENNY</span> <strong>SLYDER</strong></a>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <a class="brand" href="#home" aria-label="Jenny Slyder home"><span>Jenny</span> <strong>Slyder</strong></a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#shows">Shows</a>
       <a href="#media">Media</a>
-      <a href="#booking">Booking</a>
+      <a href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">Booking</a>
       <a href="promoter.html">Promoter Login</a>
     </nav>
   </header>
 
   <main id="home">
-    <section class="hero">
-      <div class="eyebrow">Live Music • Covers • Originals</div>
+    <section class="hero section-pad">
       <div class="hero-card">
         <div class="hero-copy">
+          <p class="eyebrow">Live Music • Covers • Originals</p>
           <h1><span>Jenny</span><strong>Slyder</strong></h1>
-          <p>Powerful vocals, crowd favorites, and high-energy live performances across Arizona’s White Mountains.</p>
-          <div class="button-row">
-            <a class="btn primary" href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">Book Jenny</a>
-            <a class="btn secondary" href="#shows">Upcoming Shows</a>
+          <p class="lead">Powerful vocals, crowd favorites, and high-energy live performances across Arizona’s White Mountains.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">Book Jenny</a>
+            <a class="button" href="#shows">Upcoming Shows</a>
           </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="assets/jenny-slyder-hero.png" alt="Jenny Slyder performing live" onerror="this.closest('.hero-photo-wrap').classList.add('missing-image'); this.remove();" />
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>About</h2>
-      <p>Jenny Slyder brings edge, warmth, and serious vocal power to every show. Her sets blend familiar covers, sing-along favorites, and original music built for a good night out.</p>
-    </section>
-
-    <section id="shows" class="section alt">
-      <h2>Shows</h2>
-      <p>Check Jenny’s latest public show announcements on Facebook.</p>
-      <a class="btn secondary" href="https://www.facebook.com/" target="_blank" rel="noopener">View Shows</a>
-    </section>
-
-    <section id="media" class="section cards">
-      <h2>Media</h2>
-      <div class="card-grid">
-        <a class="media-card" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
-        <a class="media-card" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-        <a class="media-card" href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-        <a class="media-card" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+    <section id="about" class="section section-pad">
+      <div class="section-inner two-col">
+        <div>
+          <h2>About</h2>
+          <p>Jenny Slyder brings edge, warmth, and serious vocal power to every show. Her sets blend familiar covers, sing-along favorites, and original music built for a good night out.</p>
+        </div>
+        <div class="callout">
+          <h3>Booking</h3>
+          <p>For booking inquiries, private events, venues, and collaborations:</p>
+          <p><a href="mailto:kochiejar@gmail.com">kochiejar@gmail.com</a></p>
+        </div>
       </div>
-      <p class="small-note">Replace these social URLs with Jenny’s exact profile links when you have them.</p>
     </section>
 
-    <section id="booking" class="section booking">
-      <h2>Booking</h2>
-      <p>For booking, availability, and promoter requests:</p>
-      <a class="email-link" href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">kochiejar@gmail.com</a>
+    <section id="shows" class="section section-pad alt">
+      <div class="section-inner">
+        <h2>Shows</h2>
+        <p>Follow Jenny’s social pages for current dates and venue updates.</p>
+        <div class="link-grid">
+          <a href="https://www.facebook.com/search/top?q=jenny%20slyder" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/search?q=Jenny%20Slyder" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.youtube.com/results?search_query=Jenny+Slyder" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" class="section section-pad">
+      <div class="section-inner two-col">
+        <div>
+          <h2>Media</h2>
+          <p>Photos, videos, and promotional material can be added here as the site grows.</p>
+        </div>
+        <div class="media-card">
+          <img src="assets/jenny-slyder-promo.jpg" alt="Jenny Slyder promotional image" onerror="this.closest('.media-card').classList.add('missing-image'); this.remove();" />
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <p>© <span id="year"></span> Jenny Slyder. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
