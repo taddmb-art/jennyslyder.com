@@ -10,6 +10,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Jenny Slyder home"><span>Jenny</span> <strong>Slyder</strong></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#about">About</a>
@@ -21,20 +22,11 @@
   </header>
 
   <main id="home">
-    <section class="hero section-pad">
-      <div class="hero-card">
-        <div class="hero-copy">
-          <p class="eyebrow">Live Music • Covers • Originals</p>
-          <h1><span>Jenny</span><strong>Slyder</strong></h1>
-          <p class="lead">Powerful vocals, crowd favorites, and high-energy live performances across Arizona’s White Mountains.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">Book Jenny</a>
-            <a class="button" href="#shows">Upcoming Shows</a>
-          </div>
-        </div>
-        <div class="hero-photo-wrap">
-          <img class="hero-photo" src="assets/jenny-slyder-hero.png" alt="Jenny Slyder performing live" onerror="this.closest('.hero-photo-wrap').classList.add('missing-image'); this.remove();" />
-        </div>
+    <section class="hero">
+      <img class="hero-image" src="assets/jenny-slyder-hero.png" alt="Jenny Slyder performing live" />
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">Book Jenny</a>
+        <a class="button" href="#shows">Upcoming Shows</a>
       </div>
     </section>
 
@@ -46,7 +38,7 @@
         </div>
         <div class="callout">
           <h3>Booking</h3>
-          <p>For booking inquiries, private events, venues, and collaborations:</p>
+          <p>For venues, private events, and collaborations:</p>
           <p><a href="mailto:kochiejar@gmail.com">kochiejar@gmail.com</a></p>
         </div>
       </div>
@@ -66,14 +58,9 @@
     </section>
 
     <section id="media" class="section section-pad">
-      <div class="section-inner two-col">
-        <div>
-          <h2>Media</h2>
-          <p>Photos, videos, and promotional material can be added here as the site grows.</p>
-        </div>
-        <div class="media-card">
-          <img src="assets/jenny-slyder-promo.jpg" alt="Jenny Slyder promotional image" onerror="this.closest('.media-card').classList.add('missing-image'); this.remove();" />
-        </div>
+      <div class="section-inner">
+        <h2>Media</h2>
+        <p>Add photos, videos, and promotional material here as the site grows.</p>
       </div>
     </section>
   </main>

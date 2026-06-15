@@ -1,10 +1,12 @@
-# Jenny Slyder Website Upload Package
+# Jenny Slyder Website Upload
 
-Upload the contents of this folder to the root of the GitHub repository.
+Upload the CONTENTS of this folder to the root of the GitHub repository.
 
-Important image filenames:
+Important files:
+- index.html
+- styles.css
+- script.js
+- promoter.html
+- assets/jenny-slyder-hero.png
 
-- `assets/jenny-slyder-hero.png`
-- `assets/jenny-slyder-promo.jpg`
-
-If the hero image does not show, rename the actual image in GitHub to exactly `jenny-slyder-hero.png` and place it inside the `assets` folder.
+Do not upload this folder itself as a nested folder.
