@@ -1,12 +1,15 @@
 # Jenny Slyder Website Upload
 
-Upload the CONTENTS of this folder to the root of the GitHub repository.
+Upload the contents of this ZIP to the root of the GitHub repository.
 
-Important files:
+Included:
 - index.html
 - styles.css
 - script.js
 - promoter.html
 - assets/jenny-slyder-hero.png
+- private/ and files/ folders
 
-Do not upload this folder itself as a nested folder.
+Booking email: kochiejar@gmail.com
+
+Promoter password in promoter.html is currently: jenny2026

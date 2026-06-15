@@ -3,24 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jenny Slyder | Promoter Login</title>
+  <title>Promoter Login | Jenny Slyder</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html"><span>Jenny</span> <strong>Slyder</strong></a>
-    <nav class="nav-links"><a href="index.html">Home</a><a href="mailto:kochiejar@gmail.com?subject=Booking%20Jenny%20Slyder">Booking</a></nav>
+    <nav class="site-nav"><a href="index.html">Home</a><a href="mailto:kochiejar@gmail.com">Booking</a></nav>
   </header>
-  <main class="section section-pad">
-    <div class="section-inner">
-      <h2>Promoter Login</h2>
-      <div class="callout">
-        <p>This page is ready for EPK, setlists, promotional links, and private venue info.</p>
-        <p>For now, contact <a href="mailto:kochiejar@gmail.com">kochiejar@gmail.com</a> for access.</p>
+  <main class="section booking-panel" style="margin-top:70px;">
+    <div>
+      <p class="section-kicker">Promoter</p>
+      <h2>Resources</h2>
+      <p>Enter the promoter password to access EPK material, setlists, and promo links.</p>
+    </div>
+    <div class="copy-card">
+      <label for="pw" style="display:block;margin-bottom:10px;color:#fff;font-weight:800;">Password</label>
+      <input id="pw" type="password" style="width:100%;padding:14px;border-radius:10px;border:1px solid rgba(242,167,25,.35);background:#080808;color:#fff;" />
+      <button class="button primary" style="margin-top:16px;border:0;cursor:pointer;" onclick="checkPassword()">Enter</button>
+      <p id="msg"></p>
+      <div id="resources" style="display:none;margin-top:20px;">
+        <p><a href="files/" style="color:#f2a719;">Open promoter files</a></p>
+        <p>Add files to the <strong>files</strong> folder in GitHub.</p>
       </div>
     </div>
   </main>
-  <footer class="site-footer"><p>© <span id="year"></span> Jenny Slyder.</p></footer>
-  <script src="script.js"></script>
+  <script>
+    function checkPassword(){
+      const val = document.getElementById('pw').value;
+      const msg = document.getElementById('msg');
+      if(val === 'jenny2026'){
+        document.getElementById('resources').style.display = 'block';
+        msg.textContent = 'Access granted.';
+      } else {
+        msg.textContent = 'Incorrect password.';
+      }
+    }
+  </script>
 </body>
 </html>
